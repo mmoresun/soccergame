@@ -7,12 +7,12 @@ const Canvas = ({ playerPosition, togglePause }) => {
         let cvs = document.getElementById("myCanvas");
         let ctx = cvs.getContext("2d");
         let background = new Image();
-        background.src = '.././img/soccer.png';
+        background.src = 'https://raw.githubusercontent.com/mmoresun/react-soccer/main/public/img/soccer.png';
 
-        // adding background
+        // add background
         const draw = () => { 
 
-            ctx.drawImage(background, 0, 0)
+            ctx.drawImage(background, 0, 0);
         }
 
         draw();
@@ -22,7 +22,7 @@ const Canvas = ({ playerPosition, togglePause }) => {
 
             ctx.font = "16px serif";
             playerPosition.map(item => { // .map() goes thru every frame and creates players with fillText(ID, X, Y) and some coefficients
-                return ctx.fillText(item[0], item[1] * 900, item[2] * 450)
+                return ctx.fillText(item[0], Math.floor(item[1] * 900), Math.floor(item[2] * 450))
             })
         }
 

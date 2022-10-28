@@ -19,11 +19,9 @@ const App = () => {
 
   const playerPosition = data.player_positions[frame];
 
-  useEffect(() => {
+  useEffect(() => {   
 
-    // do nothing if paused or the last frame is reached
-
-    if (isPaused || frame === data.player_positions.length - 1) {
+    if (isPaused || frame === data.player_positions.length - 1) { // do nothing if paused or the last frame is reached
       return;
     }
 
