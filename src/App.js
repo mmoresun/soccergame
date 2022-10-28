@@ -19,7 +19,7 @@ const App = () => {
 
   const playerPosition = data.player_positions[frame];
 
-  useEffect(() => {   
+  useEffect(() => {
 
     if (isPaused || frame === data.player_positions.length - 1) { // do nothing if paused or the last frame is reached
       return;
@@ -51,10 +51,14 @@ const App = () => {
         isPaused={isPaused}
         togglePause={togglePause}
         setFrame={setFrame}
-        frame={frame} />
+        frame={frame}
+      />
 
       <Timer
-        frame={frame} />
+        frame={frame}
+      />
+
+      <h6><a href="https://github.com/mmoresun/soccergame/">Source code on Github</a></h6>
     </div>
 
   );
