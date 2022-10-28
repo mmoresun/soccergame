@@ -7,7 +7,7 @@ const Canvas = ({ playerPosition, togglePause }) => {
         let cvs = document.getElementById("myCanvas");
         let ctx = cvs.getContext("2d");
         let background = new Image();
-        background.src = 'https://raw.githubusercontent.com/mmoresun/react-soccer/main/public/img/soccer.png';
+        background.src = 'https://raw.githubusercontent.com/mmoresun/soccergame/gh-pages/img/soccer.png';
 
         // add background
         const draw = () => { 
