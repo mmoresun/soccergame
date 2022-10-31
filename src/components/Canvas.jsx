@@ -8,9 +8,11 @@ const Canvas = ({ playerPosition, togglePause }) => {
         let ctx = cvs.getContext("2d");
         let background = new Image();
         background.src = 'https://raw.githubusercontent.com/mmoresun/soccergame/gh-pages/img/soccer.png';
+        let player = new Image()
+        player.src = 'https://raw.githubusercontent.com/mmoresun/soccergame/main/public/img/running.png'
 
         // add background
-        const draw = () => { 
+        const draw = () => {
 
             ctx.drawImage(background, 0, 0);
         }
@@ -18,15 +20,25 @@ const Canvas = ({ playerPosition, togglePause }) => {
         draw();
 
         // create 'players'
-        function textDraw() {
+        const textDraw = () => {
 
-            ctx.font = "16px serif";
+            ctx.font = "14px serif";            
             playerPosition.map(item => { // .map() goes thru every frame and creates players with fillText(ID, X, Y) and some coefficients
                 return ctx.fillText(item[0], Math.floor(item[1] * 900), Math.floor(item[2] * 450))
             })
         }
 
         textDraw(); // visualise players
+
+        const playerDraw = () => {
+
+            playerPosition.map((item) => {
+                return ctx.drawImage(player, Math.floor(item[1] * 900), Math.floor(item[2] * 450 + 5))
+            })
+        }
+
+        playerDraw();
+
 
         // for (let i = 0; i < imgData.data.length; i += 4) {
         //     imgData.data[i + 0] = 255;

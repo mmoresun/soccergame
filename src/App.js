@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Canvas from './components/Canvas';
 import Slider from './components/Slider';
 import Timer from './components/Timer';
+import Header from './components/Header';
 
 const App = () => {
 
@@ -17,19 +18,21 @@ const App = () => {
 
   };
 
+  // this streams players IDs and positions
+
   const playerPosition = data.player_positions[frame];
 
   useEffect(() => {
 
-    if (isPaused || frame === data.player_positions.length - 1) { // do nothing if paused or the last frame is reached
+    if (isPaused || frame === data.player_positions.length - 1) { // do nothing if last frame is reached or pause button pressed
       return;
     }
 
-    const frameTimeOut = setTimeout(() => { // counter that adds +1 to frames every 100ms (as it set in data.js)
+    const frameTimeOut = setTimeout(() => {
 
-      setFrame((prevFrame) => prevFrame + 1);
+      setFrame((prevFrame) => prevFrame + 1); // counter adds +1 to frames every 100ms
 
-    }, data.interval);
+    }, data.interval); // ... as it set in data.js
 
     return () => {
 
@@ -42,6 +45,8 @@ const App = () => {
 
     <div className="App">
 
+      <Header />
+
       <Canvas
         playerPosition={playerPosition}
         togglePause={togglePause}
@@ -52,6 +57,7 @@ const App = () => {
         togglePause={togglePause}
         setFrame={setFrame}
         frame={frame}
+        data={data}
       />
 
       <Timer
@@ -60,7 +66,6 @@ const App = () => {
 
       <h6><a href="https://github.com/mmoresun/soccergame/">Source code on Github</a></h6>
     </div>
-
   );
 }
 

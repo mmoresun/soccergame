@@ -4,7 +4,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;  
 }
 
 code {
@@ -16,3 +16,22 @@ code {
   background: url('../public/img/soccer.png');
   background-size:1000px 500px;
 } */
+
+.header {
+
+  max-width: 1000px;
+  width: 90%;
+  border: 2px #ccc solid;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 10px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  border-radius: 15px;
+}
