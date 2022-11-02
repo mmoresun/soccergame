@@ -6,8 +6,8 @@ const Timer = ({ frame }) => {
     const seconds = Math.floor(frame / 10 - minutes * 60);
 
     return (
-        <div>
-            <h3>{minutes}:{seconds < 10 ? '0'+seconds : seconds}</h3>
+        <div>            
+            <p>{minutes}:{seconds < 10 ? '0'+seconds : seconds}</p>
         </div>
     );
 

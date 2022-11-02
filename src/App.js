@@ -3,7 +3,6 @@ import data from './data';
 import { useState, useEffect } from 'react';
 import Canvas from './components/Canvas';
 import Slider from './components/Slider';
-import Timer from './components/Timer';
 import Header from './components/Header';
 
 const App = () => {
@@ -58,10 +57,6 @@ const App = () => {
         setFrame={setFrame}
         frame={frame}
         data={data}
-      />
-
-      <Timer
-        frame={frame}
       />
 
       <h6><a href="https://github.com/mmoresun/soccergame/">Source code on Github</a></h6>

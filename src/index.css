@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;  
+  background-image: url('../public/img/background.jpg');
+  background-repeat: no-repeat;
 }
 
 code {
@@ -24,14 +26,45 @@ code {
   border: 2px #ccc solid;
   background-color: rgba(255, 0, 0, 0.1);
   border-radius: 10px;
-  margin: 10px;
-  min-height: 60px;
+  margin: 10px 0;
+  min-height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
+.slider {
+
+  max-width: 1000px;
+  width: 90%;
+  border: 2px #ccc solid;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  margin: 10px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.slider p {
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+.slider input {
+  margin: 5px 0;
+}
+
 canvas {
   border-radius: 15px;
+}
+
+i {
+  border: none;
+  color: blue;
+  margin: 5px 5px;
 }
