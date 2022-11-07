@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react'
 
+
 const Canvas = ({ playerPosition, togglePause }) => {
+
+    let background = new Image();
+    background.src = 'https://raw.githubusercontent.com/mmoresun/soccergame/gh-pages/img/soccer.png';
 
     useEffect(() => { // standart canvas settings
 
         let cvs = document.getElementById("myCanvas");
         let ctx = cvs.getContext("2d");
-        let background = new Image();
-        background.src = 'https://raw.githubusercontent.com/mmoresun/soccergame/gh-pages/img/soccer.png';
-        let player = new Image()
-        player.src = 'https://raw.githubusercontent.com/mmoresun/soccergame/main/public/img/running.png'
+
+        let player = new Image();
+        player.src = 'https://raw.githubusercontent.com/mmoresun/soccergame/gh-pages/img/running.png';
 
         // add background
         const draw = () => {
@@ -19,40 +22,33 @@ const Canvas = ({ playerPosition, togglePause }) => {
 
         draw();
 
-        // create 'players'
+        // create and visualise the player numbers
         const textDraw = () => {
 
-            ctx.font = "14px serif";            
+            ctx.font = "14px serif";
             playerPosition.map(item => { // .map() goes thru every frame and creates players with fillText(ID, X, Y) and some coefficients
-                return ctx.fillText(item[0], Math.floor(item[1] * 900), Math.floor(item[2] * 450))
+                return ctx.fillText(item[0], Math.floor(item[1] * 900), Math.floor(item[2] * 450));
             })
         }
 
-        textDraw(); // visualise players
+        textDraw();
 
+        // create and visualise the players
         const playerDraw = () => {
 
             playerPosition.map((item) => {
-                return ctx.drawImage(player, Math.floor(item[1] * 900), Math.floor(item[2] * 450 + 5))
+                return ctx.drawImage(player, Math.floor(item[1] * 900), Math.floor(item[2] * 450 + 5));
+                // '+5' meand 'move the player down on 5 px'
             })
         }
 
         playerDraw();
 
-
-        // for (let i = 0; i < imgData.data.length; i += 4) {
-        //     imgData.data[i + 0] = 255;
-        //     imgData.data[i + 1] = 0;
-        //     imgData.data[i + 2] = 0;
-        //     imgData.data[i + 3] = 255;
-        // }
-
-        // ctx.putImageData(imgData, playerPosition[0][1] * 1000, playerPosition[0][2] * 500);
-
-    }, [playerPosition]); // re-render when players positions changes
+    });
 
     return (
         <div>
+
             <canvas
                 id='myCanvas'
                 width={1000}
