@@ -59,7 +59,7 @@ const App = () => {
         data={data}
       />
 
-      <h6><a href="https://github.com/mmoresun/soccergame/">Source code on Github</a></h6>
+      <h6>All players positions are stored in a huge array of almost 3000 elements. "Frames" change 10 times per second. Poweed by React. <a href="https://github.com/mmoresun/soccergame/">Source code on Github</a></h6>      
     </div>
   );
 }
